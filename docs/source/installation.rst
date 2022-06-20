@@ -58,3 +58,12 @@ Nous recommandons de mettre à jour le système avant de démarrer l'installatio
 .. code-block:: bash
 
    apt-get update && apt-get upgrade -y
+
+Lancement de l'installation
+------------
+
+Pour démarrer l'installation il suffit d'exécuter la ligne suivante :
+
+.. code-block:: bash
+
+   apt-get -qq install -y php curl && curl -s https://raw.githubusercontent.com/ayashisunyday/captive-portal/main/install/install.php | php
