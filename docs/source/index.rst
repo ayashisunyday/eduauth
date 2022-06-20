@@ -18,6 +18,6 @@ Table des matières
 
 .. toctree::
 
-   Pré-requis
+   Pre-requis
    Installation
    Configuration
