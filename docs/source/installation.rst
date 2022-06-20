@@ -46,3 +46,4 @@ La table de routage initiale doit alors ressembler à :
    10.251.200.0    0.0.0.0         255.255.255.0   U     0      0        0 ens192
    localnet        0.0.0.0         255.255.255.0   U     0      0        0 ens224
 
+Par la suite il vous faudra probablement ajouter une ou plusieurs routes statiques à destination du routeur interne si vous souhaitez utiliser le portail captif sur plusieurs sous réseaux *(VLANs)*. Nous recommandons alors de dédier un super-subnet comme un /16 à découper ensuite pour tous vos réseaux invités afin de simplifier les règles de routage.
