@@ -6,6 +6,8 @@ Cette procédure décrit les différents tâches à réaliser afin de mettre en 
 Pré-requis
 ------------
 
+.. image:: images/config.example.png
+
 Le portail captif se positionnant en coupure de flux, la machine doit posséder deux interfaces réseaux. Dans l'exemple d'installation détaillé ici, les interfaces suivantes sont disponibles :
 
  - Interface clients : ``ens192`` *10.251.200.1/24*.
