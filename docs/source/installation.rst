@@ -3,7 +3,7 @@ Installation
 
 Cette procédure décrit les différents tâches à réaliser afin de mettre en production le portail captif. Le script d'installation automatique a été conçu pour fonctionner sur un système **Debian 11**, les autres systèmes d'exploitation ne sont pas pris en charge actuellement.
 
-Pré-requis
+Pré-requis réseaux
 ------------
 
 .. image:: images/config.example.png
@@ -47,3 +47,6 @@ La table de routage initiale doit alors ressembler à :
    localnet        0.0.0.0         255.255.255.0   U     0      0        0 ens224
 
 Par la suite il vous faudra probablement ajouter une ou plusieurs routes statiques à destination du routeur interne si vous souhaitez utiliser le portail captif sur plusieurs sous réseaux *(VLANs)*. Nous recommandons alors de dédier un super-subnet comme un /16 à découper ensuite pour tous vos réseaux invités afin de simplifier les règles de routage.
+
+Pré-requis système
+------------
