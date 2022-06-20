@@ -1,9 +1,14 @@
-Template for the Read the Docs tutorial
+Portail captif pour réseaux invités Eduspot
 =======================================
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+Ce projet vise à fournir un portail captif pour réseaux invités wifi ou filaire. Il propose plusieurs méthodes d’authentification :
 
-Read the tutorial here:
+ - Compte invités personnels temporaires.
+ - Compte de groupe pour un séminaire.
+ - Utilisation de la fédération d’identité Education/Recherche de Renater.
 
-https://docs.readthedocs.io/en/stable/tutorial/
+Il propose également une interface d’administration.
+
+La documentation d'installation se trouve ici :
+
+https://captive-portal.readthedocs.io/fr/latest/index.html
