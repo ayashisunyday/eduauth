@@ -17,7 +17,9 @@ Table des matières
 --------
 
 .. toctree::
+   :maxdepth: 2
 
-   Pre-requis
-   Installation
-   Configuration
+   usage/initial
+   usage/installation
+   usage/configuration
+   
