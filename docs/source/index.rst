@@ -1,22 +1,23 @@
-Welcome to Lumache's documentation!
+Portail captif pour réseaux invités Eduspot
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+Ce projet vise à fournir un portail captif pour réseaux invités wifi ou filaire. Il propose plusieurs méthodes d'authentification :
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+ - Compte invités personnels temporaires.
+ - Compte de groupe pour un séminaire.
+ - Utilisation de la fédération d'identité Education/Recherche de Renater.
+ 
+Il propose également une interface d'administration.
 
 .. note::
 
-   This project is under active development.
+   Ce projet est porté par l'INRAE (https://www.inrae.fr).
 
-Contents
+Table des matières
 --------
 
 .. toctree::
 
-   usage
-   api
+   Pré-requis
+   Installation
+   Configuration
