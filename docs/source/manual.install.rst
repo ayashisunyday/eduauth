@@ -113,7 +113,11 @@ Installation du package :
 .. code-block:: bash
 
    apt-get install -y isc-dhcp-server
+
+.. note::
    
+   Dans la configuration détaillée ici, l'interface interne est ``ens192``, elle a l'IP ``10.251.200.1/24``, vous devez adapter avec les éléments de votre propre installation.
+
 Edition du fichier ``/etc/default/isc-dhcp-server`` pour spécifier l'interface réseau interne de la machine :
 
 .. code-block:: bash
@@ -141,3 +145,68 @@ Redémarrer le service :
 .. code-block:: bash
 
    service isc-dhcp-server start
+
+Installation du serveur DNS (Unbound)
+------------
+
+Afin de centraliser tous les services, nous conseillons d'installer le serveur DNS pour les clients invités directement sur la machine hébergeant le portail captif. Cette étape n'est pas obligatoire et dépend de votre infrastructure.
+
+Installation du package et téléchargement de la liste des DNS racines :
+
+.. code-block:: bash
+
+   apt-get install -y unbound
+   wget ftp://ftp.internic.net/domain/named.cache -O /var/lib/unbound/root.hints
+
+.. note::
+   
+   Dans la configuration détaillée ici, l'interface interne a l'IP ``10.251.200.1`` et le supersubnet content tous les réseaux invités est ``10.251.0.0/16``, vous devez adapter avec les éléments de votre propre installation comme le nom DNS de votre portail.
+   
+Edition du fichier ``/etc/unbound/unbound.conf`` pour configurer le service DNS :
+
+.. code-block:: bash
+   server:
+   statistics-interval: 0
+   extended-statistics: yes
+   statistics-cumulative: yes
+   verbosity: 3
+   interface: 127.0.0.1
+   interface: 10.251.200.1
+   port: 53
+   do-ip4: yes
+   do-ip6: no
+   do-udp: yes
+   do-tcp: no
+   access-control: 127.0.0.0/8 allow
+   access-control: 10.0.0.0/8 allow
+   access-control: 0.0.0.0/0 refuse
+   root-hints: "/var/lib/unbound/root.hints"
+   hide-identity: ye
+   hide-version: yes
+   harden-glue: yes
+   harden-dnssec-stripped: yes
+   use-caps-for-id: yes
+   cache-min-ttl: 3600
+   cache-max-ttl: 86400
+   prefetch: yes
+   num-threads: 6
+   msg-cache-slabs: 16
+   rrset-cache-slabs: 16
+   infra-cache-slabs: 16
+   key-cache-slabs: 16
+   rrset-cache-size: 256m
+   msg-cache-size: 128m
+   so-rcvbuf: 1m
+   unwanted-reply-threshold: 10000
+   do-not-query-localhost: yes
+   val-clean-additional: yes
+   use-syslog: yes
+   harden-dnssec-stripped: yes
+   cache-min-ttl: 3600
+   cache-max-ttl: 86400
+   prefetch: yes
+   prefetch-key: yes
+
+   local-zone: "guests.local" static
+   local-data: "portal.guests.local A 10.251.200.1"
+   local-data-ptr: "10.251.200.1 portal.guests.local"
