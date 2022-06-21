@@ -1,6 +1,10 @@
 Portail captif pour réseaux invités Eduspot
 ===================================
 
+.. figure:: images/logo.png
+    :align: right
+    :figwidth: 200px
+
 Ce projet vise à fournir un portail captif pour réseaux invités wifi ou filaire. Il propose plusieurs méthodes d'authentification :
 
  - Compte invités personnels temporaires.
