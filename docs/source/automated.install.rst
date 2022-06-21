@@ -59,7 +59,11 @@ Pré-requis système
 
 Le système d'installation automatisé est conçu pour être exécuté sur un environnement en Debian 11. Celui-ci peut être physique ou virtuel. Votre machine doit être connectée à Internet et être en mesure de télécharger des packages.
 
-Nous recommandons d'utiliser une image fraichement déployée avec le minimum de modifications, dans l'idéale ne possédant que la configuration réseau initial. Avant de démarrer l'installation vous pouvez mettre à jour le système :
+.. note::
+
+   Nous recommandons d'utiliser une image fraichement déployée avec le minimum de modifications, dans l'idéale ne possédant que la configuration réseau initial.
+   
+Avant de démarrer l'installation vous pouvez mettre à jour le système :
 
 .. code-block:: bash
 
