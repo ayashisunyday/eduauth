@@ -19,6 +19,7 @@ Table des matières
 .. toctree::
    :maxdepth: 2
 
-   installation
+   automated.install
+   manual.install
    usage
    
