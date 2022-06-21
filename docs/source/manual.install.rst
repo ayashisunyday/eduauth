@@ -15,7 +15,9 @@ Le portail captif se positionnant en coupure de flux, la machine doit posséder 
  - Interface clients : ``ens192`` *10.251.200.1/24*.
  - Interface externe : ``ens224`` *10.251.201.2/24*.
 
-La machine possédant plusieurs interfaces, il est nécessaire de bien configurer sa table de routage. La route par défaut doit passer par l'interface externe ``ens224`` et des routes statiques doivent être positionnées sur l'interface client ``ens192`` dans le cas ou elle comprendrait plusieurs subnets.
+.. note::
+
+   La machine possédant plusieurs interfaces, il est nécessaire de bien configurer sa table de routage. La route par défaut doit passer par l'interface externe ``ens224`` et des routes statiques doivent être positionnées sur l'interface client ``ens192`` dans le cas ou elle comprendrait plusieurs subnets.
 
 La configuration suivante peut être mise en place dans le fichier **/etc/network/interfaces** :
 
