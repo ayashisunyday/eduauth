@@ -6,7 +6,7 @@ Si vous ne pouvez pas utiliser le script d'installation automatique ou si vous s
 Pré-requis réseaux
 ------------
 
-Example de déploiement :
+Le schéma suivant synthétise un example de déploiement :
 
 .. image:: images/config.example.png
 
