@@ -77,6 +77,13 @@ Redémarrer le daemon avec la commande :
 
    sysctl -p /etc/sysctl.conf
    
+Pour vérifier que le routage et correctement activé vous pouvez éxécuter la commande :
+
+.. code-block:: bash
+
+   cat /proc/sys/net/ipv4/ip_forward
+
+   
 Installation d'IPTables
 ------------
 
@@ -95,3 +102,42 @@ Pour vérifier l'installation du firewall ``iptables`` vous pouvez éxécuter la
 .. code-block:: bash
 
    iptables -L -v
+
+Installation du serveur DHCP (ISC)
+------------
+
+Afin de centraliser tous les services, nous conseillons d'installer le serveur DHCP pour les clients invités directement sur la machine hébergeant le portail captif. Cette étape n'est pas obligatoire et dépend de votre infrastructure.
+
+Installation du package :
+
+.. code-block:: bash
+
+   apt-get install -y isc-dhcp-server
+   
+Edition du fichier ``/etc/default/isc-dhcp-server`` pour spécifier l'interface réseau interne de la machine :
+
+.. code-block:: bash
+
+   INTERFACESv4="ens192"
+
+Edition du fichier ``/etc/dhcp/dhcpd.conf`` pour configurer le service DHCP :
+
+.. code-block:: bash
+
+   option domain-name "guest.local";
+   option domain-name-servers 10.251.200.1;
+   default-lease-time 600;
+   max-lease-time 7200;
+   ddns-update-style none;
+   subnet 10.251.200.0 netmask 255.255.255.0 {
+       range 10.251.200.2 10.251.200.254;
+       option subnet-mask 255.255.255.0;
+       option broadcast-address 10.251.200.255;
+       option routers 10.251.200.1;
+   }
+   
+Redémarrer le service :
+
+.. code-block:: bash
+
+   service isc-dhcp-server start
