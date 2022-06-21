@@ -61,11 +61,37 @@ Nous recommandons de mettre à jour le système avant de démarrer l'installatio
 
    apt-get update && apt-get upgrade -y
 
-Lancement de l'installation
+Activation du routage
 ------------
 
-Pour démarrer l'installation il suffit d'exécuter la ligne suivante :
+La machine faisant office de routeur, cette fonctionnalité doit être activée sur le système. Nous conseillons également de désactiver IPv6. Pour ce faire, éditer le fichier ``/etc/sysctl.conf``
 
 .. code-block:: bash
 
-   apt-get -qq install -y php curl && curl -s https://raw.githubusercontent.com/ayashisunyday/captive-portal/main/install/install.php | php
+   net.ipv6.conf.all.disable_ipv6 = 1
+   net.ipv4.ip_forward=1
+
+Redémarrer le daemon avec la commande :
+
+.. code-block:: bash
+
+   sysctl -p /etc/sysctl.conf
+   
+Installation d'IPTables
+------------
+
+Cette étape doit être effectuée sur les machines ou le daemob ``nftables`` est installé. En effet il faut le remplacé par ``iptables`` pour pouvoir déployer les fonctionnalités d'interception réseau du portail captif.
+
+.. code-block:: bash
+
+   apt-get remove -y --auto-remove nftables
+   apt-get purge -y nftables
+   apt-get update
+   apt-get install -y iptables
+   apt-get install -y iptables-persistent
+
+Pour vérifier l'installation du firewall ``iptables`` vous pouvez éxécuter la commande :
+
+.. code-block:: bash
+
+   iptables -L -v
