@@ -1,4 +1,4 @@
-Installation
+Installation automatisée
 =====
 
 Cette procédure décrit les différentes tâches à réaliser afin de mettre en production le portail captif. Le script d'installation automatique a été conçu pour fonctionner sur un système **Debian 11**, les autres systèmes d'exploitation ne sont pas pris en charge actuellement.
