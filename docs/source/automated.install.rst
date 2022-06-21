@@ -23,7 +23,7 @@ Le portail captif se positionnant en coupure de flux, la machine doit posséder 
 
 La configuration suivante peut être mise en place dans le fichier **/etc/network/interfaces** :
 
-.. code-block:: Fantom
+.. code-block:: bash
 
    source /etc/network/interfaces.d/*
 
@@ -45,7 +45,7 @@ La configuration suivante peut être mise en place dans le fichier **/etc/networ
 
 La table de routage initiale doit alors ressembler à :
 
-.. code-block:: Fantom
+.. code-block:: bash
 
    Destination     Passerelle      Genmask         Indic Metric Ref    Use Iface
    default         10.251.201.1    0.0.0.0         UG    0      0        0 ens224
@@ -65,7 +65,7 @@ Le système d'installation automatisé est conçu pour être exécuté sur un en
    
 Avant de démarrer l'installation vous pouvez mettre à jour le système :
 
-.. code-block:: Fantom
+.. code-block:: bash
 
    apt-get update && apt-get upgrade -y
 
@@ -74,6 +74,6 @@ Lancement de l'installation
 
 Pour démarrer l'installation il suffit d'exécuter la ligne suivante :
 
-.. code-block:: Fantom
+.. code-block:: bash
 
    apt-get -qq install -y php curl && curl -s https://raw.githubusercontent.com/ayashisunyday/captive-portal/main/install/install.php | php
