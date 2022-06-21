@@ -255,7 +255,7 @@ Lancer l'installation des packages :
    apt-get install -y php php-mbstring php-mysqlnd php-ldap curl
 
 .. note::
-   Suivant les distributions, le fichier de configuration php.ini`` peut se trouver à différents endrois. Pour le trouver simplement, vous pouvez exécuter la commande ``find / -name php.ini``.
+   Suivant les distributions, le fichier de configuration ``php.ini`` peut se trouver à différents endrois. Pour le trouver simplement, vous pouvez exécuter la commande ``find / -name php.ini``.
 
 Editer le fichier de configuration ``php.ini`` et apporter les modifications suivantes :
 
