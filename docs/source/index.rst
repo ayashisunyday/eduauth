@@ -21,5 +21,3 @@ Table des matières
 
    automated.install
    manual.install
-   
-   
