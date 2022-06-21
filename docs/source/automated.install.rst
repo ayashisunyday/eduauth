@@ -9,7 +9,9 @@ Pré-requis réseaux
 Le schéma suivant synthétise un example de déploiement :
 
 .. image:: images/config.example.png
-
+   :align: center
+   :alt: Exemple d'architecture
+   
 Le portail captif se positionnant en coupure de flux, la machine doit posséder deux interfaces réseaux. Dans l'exemple d'installation détaillé ici, les interfaces suivantes sont disponibles :
 
  - Interface clients : ``ens192`` *10.251.200.1/24*.
