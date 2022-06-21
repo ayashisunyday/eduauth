@@ -221,6 +221,8 @@ Redémarrer le service :
 Redirection des fichiers de logs
 ------------
 
+Par défaut les service DNS et DHCP écrivent leurs événements dans le fichier ``/var/log/messages``, il est préférable de les éclater dans des fichiers distincts.
+
 Editer le fichier ``/etc/rsyslog.conf`` et ajouter à la fin :
 
 .. code-block:: bash
@@ -252,10 +254,8 @@ Lancer l'installation des packages :
 
    apt-get install -y php php-mbstring php-mysqlnd php-ldap curl
 
-Suivant les distributions, le fichier de configuration php.ini`` peut se trouver à différents endrois. Pour le trouver simplement, vous pouvez exécuter la commande ``find / -name php.ini``.
-
 .. note::
-   Par défaut les service DNS et DHCP écrivent leurs événements dans le fichier ``/var/log/messages``, il est préférable de les éclater dans des fichiers distincts.
+   Suivant les distributions, le fichier de configuration php.ini`` peut se trouver à différents endrois. Pour le trouver simplement, vous pouvez exécuter la commande ``find / -name php.ini``.
 
 Editer le fichier de configuration ``php.ini`` et apporter les modifications suivantes :
 
