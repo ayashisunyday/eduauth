@@ -212,4 +212,55 @@ Edition du fichier ``/etc/unbound/unbound.conf`` pour configurer le service DNS 
    local-data: "portal.guests.local A 10.251.200.1"
    local-data-ptr: "10.251.200.1 portal.guests.local"
 
-wesh
+Redémarrer le service :
+
+.. code-block:: bash
+
+   service unbound restart
+
+Redirection des fichiers de logs
+------------
+
+Editer le fichier ``/etc/rsyslog.conf`` et ajouter à la fin :
+
+.. code-block:: bash
+
+   if ( $programname startswith "dhcpd" ) then {
+       action(type="omfile" file="/var/log/dhcpd.log")
+       stop
+   }
+   
+   if ( $programname startswith "unbound" ) then {
+       action(type="omfile" file="/var/log/unbound.log")
+       stop
+   }
+   
+Redémarrer le service :
+
+.. code-block:: bash
+
+   service rsyslog restart
+
+Installation et configuration de PHP
+------------
+
+L'intégralité du code du portail captif est écrit en PHP. Il a été testé en ``PHP5.x`` et ``PHP7.x``.
+
+Lancer l'installation des packages :
+
+.. code-block:: bash
+
+   apt-get install -y php php-mbstring php-mysqlnd php-ldap curl
+
+Suivant les distributions, le fichier de configuration php.ini`` peut se trouver à différents endrois. Pour le trouver simplement, vous pouvez exécuter la commande ``find / -name php.ini``.
+
+.. note::
+   Par défaut les service DNS et DHCP écrivent leurs événements dans le fichier ``/var/log/messages``, il est préférable de les éclater dans des fichiers distincts.
+
+Editer le fichier de configuration ``php.ini`` et apporter les modifications suivantes :
+
+.. code-block:: bash
+
+   upload_max_filesize = 100M
+   memory_limit = 256M
+   post_max_size = 100M
