@@ -165,6 +165,7 @@ Installation du package et téléchargement de la liste des DNS racines :
 Edition du fichier ``/etc/unbound/unbound.conf`` pour configurer le service DNS :
 
 .. code-block:: bash
+
    server:
    statistics-interval: 0
    extended-statistics: yes
@@ -210,3 +211,5 @@ Edition du fichier ``/etc/unbound/unbound.conf`` pour configurer le service DNS 
    local-zone: "guests.local" static
    local-data: "portal.guests.local A 10.251.200.1"
    local-data-ptr: "10.251.200.1 portal.guests.local"
+
+wesh
