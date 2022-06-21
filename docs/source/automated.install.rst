@@ -52,14 +52,14 @@ La table de routage initiale doit alors ressembler à :
    10.251.200.0    0.0.0.0         255.255.255.0   U     0      0        0 ens192
    localnet        0.0.0.0         255.255.255.0   U     0      0        0 ens224
 
-Par la suite il vous faudra probablement ajouter une ou plusieurs routes statiques à destination du routeur interne si vous souhaitez utiliser le portail captif sur plusieurs sous réseaux *(VLANs)*. Nous recommandons alors de dédier un super-subnet comme un /16 à découper ensuite pour tous vos réseaux invités afin de simplifier les règles de routage.
+Par la suite il vous faudra probablement ajouter une ou plusieurs routes statiques à destination du routeur interne si vous souhaitez utiliser le portail captif sur plusieurs sous réseaux. Nous recommandons alors de dédier un super-subnet comme un /16 à découper ensuite pour tous vos réseaux invités afin de simplifier les règles de routage au niveau du portail captif.
 
 Pré-requis système
 ------------
 
 Le système d'installation automatisé est conçu pour être exécuté sur un environnement en Debian 11. Celui-ci peut être physique ou virtuel. Votre machine doit être connectée à Internet et être en mesure de télécharger des packages.
 
-Nous recommandons de mettre à jour le système avant de démarrer l'installation :
+Nous recommandons d'utiliser une image fraichement déployée avec le minimum de modifications, dans l'idéale ne possédant que la configuration réseau initial. Avant de démarrer l'installation vous pouvez mettre à jour le système :
 
 .. code-block:: bash
 
