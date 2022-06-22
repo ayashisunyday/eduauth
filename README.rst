@@ -11,4 +11,4 @@ Il propose également une interface d’administration.
 
 La documentation d'installation se trouve ici :
 
-https://captive-portal.readthedocs.io/fr/latest/index.html
+https://eduauth.readthedocs.io/fr/latest/
