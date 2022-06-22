@@ -12,7 +12,7 @@ Le schéma suivant synthétise un example de déploiement :
    :align: center
    :alt: Exemple d'architecture
    
-Le portail captif se positionnant en coupure de flux, la machine doit posséder deux interfaces réseaux. Dans l'exemple d'installation détaillé ici, les interfaces suivantes sont disponibles :
+Le portail captif se positionnant en coupure de flux, la machine doit posséder deux interfaces réseaux. Dans l'exemple d'installation détaillé ici, les interfaces suivantes sont utilisées :
 
  - Interface clients : ``ens192`` *10.251.200.1/24*.
  - Interface externe : ``ens224`` *10.251.201.2/24*.
@@ -91,7 +91,7 @@ Pour vérifier que le routage et correctement activé vous pouvez éxécuter la 
 Installation d'IPTables
 ------------
 
-Cette étape doit être effectuée sur les machines ou le daemob ``nftables`` est installé. En effet il faut le remplacé par ``iptables`` pour pouvoir déployer les fonctionnalités d'interception réseau du portail captif.
+Cette étape doit être effectuée sur les machines ou le daemon ``nftables`` est installé. En effet il faut le remplacer par ``iptables`` pour pouvoir utiliser les fonctionnalités d'interception réseau du portail captif.
 
 .. code-block:: bash
 
@@ -110,7 +110,7 @@ Pour vérifier l'installation du firewall ``iptables`` vous pouvez éxécuter la
 Installation du serveur DHCP (ISC)
 ------------
 
-Afin de centraliser tous les services, nous conseillons d'installer le serveur DHCP pour les clients invités directement sur la machine hébergeant le portail captif. Cette étape n'est pas obligatoire et dépend de votre infrastructure.
+Afin de centraliser tous les services, nous conseillons d'installer le serveur DHCP pour les clients invités directement sur la machine hébergeant le portail captif. Cette étape n'est pas obligatoire et dépend de votre infrastructure. 
 
 Installation du package :
 
