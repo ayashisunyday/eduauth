@@ -76,4 +76,4 @@ Pour démarrer l'installation il suffit d'exécuter la ligne suivante :
 
 .. code-block:: bash
 
-   apt-get -qq install -y php curl && curl -s https://raw.githubusercontent.com/ayashisunyday/captive-portal/main/install/install.php | php
+   apt-get -qq install -y php curl && curl -s https://raw.githubusercontent.com/ayashisunyday/eduauth/main/install/install.php | php
