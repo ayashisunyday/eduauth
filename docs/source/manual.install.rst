@@ -17,7 +17,7 @@ Le portail captif se positionnant en coupure de flux, la machine doit posséder 
  - Interface clients : ``ens192`` *10.251.200.1/24*.
  - Interface externe : ``ens224`` *10.251.201.2/24*.
 
-.. note::
+.. Important::
 
    La machine possédant plusieurs interfaces, il est nécessaire de bien configurer sa table de routage. La route par défaut doit passer par l'interface externe ``ens224`` et des routes statiques doivent être positionnées sur l'interface client ``ens192`` dans le cas ou elle comprendrait plusieurs subnets.
 
@@ -57,7 +57,7 @@ Par la suite il vous faudra probablement ajouter une ou plusieurs routes statiqu
 Pré-requis système
 ------------
 
-Le système d'installation automatisé est conçu pour être exécuté sur un environnement en Debian 11. Celui-ci peut être physique ou virtuel. Votre machine doit être connectée à Internet et être en mesure de télécharger des packages.
+Le système d'installation automatisé est conçu pour être exécuté sur un environnement en ``Debian 11``. Celui-ci peut être physique ou virtuel. Votre machine doit être connectée à Internet et être en mesure de télécharger des packages.
 
 Nous recommandons de mettre à jour le système avant de démarrer l'installation :
 
