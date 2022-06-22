@@ -1,7 +1,7 @@
 Installation manuelle
 =====
 
-Si vous ne pouvez pas utiliser le script d'installation automatique ou si vous souhaitez comprendre les différents points de configuration vous pouvez dérouler cette procédure manuelle.
+Si vous ne pouvez pas utiliser le script d'installation automatique ou si vous souhaitez comprendre les différents points de configuration vous pouvez dérouler cette procédure manuelle. Il est cependant important de comprendre qu'elle a été écrite pour un système d'exploitation Debian et que des modifications et ajustements devront être fait pour d'autres plateformes.
 
 Pré-requis réseaux
 ------------
