@@ -57,7 +57,7 @@ Par la suite il vous faudra probablement ajouter une ou plusieurs routes statiqu
 Pré-requis système
 ------------
 
-Le système d'installation automatisé est conçu pour être exécuté sur un environnement en Debian 11. Celui-ci peut être physique ou virtuel. Votre machine doit être connectée à Internet et être en mesure de télécharger des packages.
+Le système d'installation automatisé est conçu pour être exécuté sur un environnement en **Debian 11**. Celui-ci peut être physique ou virtuel. Votre machine doit être connectée à Internet et être en mesure de télécharger des packages.
 
 .. note::
 
