@@ -846,6 +846,18 @@ CREATE TABLE `seminars-sessions` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `events-buffer`
+--
+
+DROP TABLE IF EXISTS `events-buffer`;
+CREATE TABLE `events-buffer` (
+  `IP` varchar(15) NOT NULL,
+  `Action` tinyint NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `subnets`
 --
 
